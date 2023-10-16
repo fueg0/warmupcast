@@ -1,5 +1,6 @@
 import sqlite3
 import db
+import Lifter
 
 
 def get_db(index="*"):
@@ -9,6 +10,7 @@ def get_db(index="*"):
     app_cursor.execute(f"SELECT * FROM lifters WHERE rack_id={index}")
     rack_info = app_cursor.fetchall()
 
+    data = []
     for lifter in rack_info:
         lifter_info = {"name": lifter[0],
                        "warmups": lifter[2],
@@ -16,5 +18,8 @@ def get_db(index="*"):
                        }
 
         lifter_info["warmups"] = db.parse_numbers(lifter_info["warmups"])
+        data.append(lifter_info)
+
+    warmups = Lifter.organize_input(data)
 
 
