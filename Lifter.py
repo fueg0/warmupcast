@@ -1,6 +1,48 @@
 from PlateCounter import *
 
 
+def organize_input(data):
+    rack_group = Group()
+
+    for user in data:
+        new_lifter = Lifter(user["name"], user["warmups"], pounds=user["unit"])
+        rack_group.add_member(new_lifter)
+
+    max_warmups = 0
+    for lifter in rack_group.members:
+        warmup_count = len(lifter.warmups)
+        if warmup_count > max_warmups:
+            max_warmups = warmup_count
+
+    warmup_rounds = []
+    organizing_group = rack_group.__copy__()
+    for i in range(0, max_warmups):
+        loads_for_round = []
+        for lifter in organizing_group.members:
+            try:
+                loads_for_round.append({
+                    "name": lifter.name,
+                    "load": lifter.warmups.pop(0),
+                    "loading": lifter.loading.pop(0)
+                })
+            except IndexError:
+                pass
+
+        warmup_rounds.append(loads_for_round)
+
+    ret = warmup_rounds
+
+    # for access to warmup_rounds, use:
+    # warmup_rounds[flight][attempt]["name"]
+    # warmup_rounds[flight][attempt]["load"]
+    # warmup_rounds[flight][attempt]["loading"]
+
+    print(rack_group)
+    print(warmup_rounds)
+    print(ret)
+    return ret
+
+
 class Lifter:
     def __init__(self, name, warmups, pounds=False):
         self.name = name
