@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.feed-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.block_container{
+    border: 1px solid black;  /* Thin black border */
+    padding: 10px 10px 10px 10px;
+}
+
+.outer-flex {
+  display: flex;
+  align-items: center;  /* Vertically center the children */
+}
+
+.info_container {
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.barbell_container{
+    display: grid;
+    grid-template-columns: 70px auto;
+    width: 400px;
+    grid-gap: 1px;
+}
+
+.load_container {
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    align-items: center;
+    grid-gap: 2px;  /* optional, for some spacing between rectangles */
+    padding-bottom: 10px;
+}
+
+.barbell {
+    height: 20px;
+    width: 100px;
+    background-color: gray;
+    border: 1px solid black;  /* Thin black border */
+    box-shadow: 0 0 0 1px white;  /* Thin white border */
+}
+
+.rectangle {
+    height: 120px;
+    width: 25px;
+    background-color: black;
+    border: 1px solid black;  /* Thin black border */
+    box-shadow: 0 0 0 1px white;  /* Thin white border */
+}
+
+/* Additional classes for unique plate colors */
+.red-plate {
+    background-color: red;
+}
+
+.blue-plate {
+    width: 20px;
+    background-color: blue;
+}
+
+.yellow-plate {
+    height: 85px;
+    width: 15px;
+    background-color: yellow;
+}
+
+.green-plate {
+    height: 65px;
+    width: 10px;
+    background-color: green;
+}
+
+.white-plate {
+    height: 50px;
+    width: 8px;
+    background-color: white;
+}
+
+.black-plate {
+    height: 30px;
+    width: 5px;
+    background-color: black;
+}
+
+.silver-plate {
+    height: 20px;
+    width: 5px;
+    background-color: gray;
+}
+
+</style>
+</head>
+<body>
+
+<div class="feed-container">
+    <h2>Warmup Display</h2>
+    <div class="block_container">
+
+        <div class="info_container">
+            <p>Mario</p>
+            <p>220KG</p>
+            <p>480LB</p>
+        </div>
+
+        <div class="barbell_container">
+            <div class="load_container">
+                <div class="barbell"></div>
+                <div class="rectangle red-plate"></div>
+                <div class="rectangle blue-plate"></div>
+                <div class="rectangle yellow-plate"></div>
+                <div class="rectangle green-plate"></div>
+                <div class="rectangle white-plate"></div>
+                <div class="rectangle black-plate"></div>
+                <div class="rectangle silver-plate"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="block_container">
+
+        <div class="info_container">
+            <p>Mario</p>
+            <p>220KG</p>
+            <p>480LB</p>
+        </div>
+
+        <div class="barbell_container">
+            <div class="outer-flex">
+                <div class="barbell"></div>
+            </div>
+
+            <div class="load_container">
+                <div class="rectangle red-plate"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="feed-container">
+    <div class="block_container">
+
+        <div class="info_container">
+            <p>Mario</p>
+            <p>220KG</p>
+            <p>480LB</p>
+        </div>
+
+        <div class="barbell_container">
+            <div class="outer-flex">
+                <div class="barbell"></div>
+            </div>
+
+            <div class="load_container">
+                <div class="rectangle red-plate"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="feed-container">
+    <div class="block_container">
+
+        <div class="info_container">
+            <p>Mario</p>
+            <p>220KG</p>
+            <p>480LB</p>
+        </div>
+
+        <div class="barbell_container">
+            <div class="outer-flex">
+                <div class="barbell"></div>
+            </div>
+
+            <div class="load_container">
+                <div class="rectangle red-plate"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="feed-container">
+    <div class="block_container">
+
+        <div class="info_container">
+            <p>Mario</p>
+            <p>220KG</p>
+            <p>480LB</p>
+        </div>
+
+        <div class="barbell_container">
+            <div class="outer-flex">
+                <div class="barbell"></div>
+            </div>
+
+            <div class="load_container">
+                <div class="rectangle red-plate"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+</body>
+</html>
