@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>Rack Landing</title>
+	</head>
+	<body>
+		<h3>Hello Rack {{num}}</h3>
+            <ul>
+                <li><a href="/display"> Display </a></li>
+                <br>
+                <li><a href="/racks"> Back to All Racks </a></li>
+                <br>
+                <li><a href="/clear_table"> Clear </a></li>
+                <br>
+                <li><a href="/save_table"> Save </a></li>
+                <br>
+            </ul>
+
+            <h2>Welcome To WarmupCast</h2>
+            <p>Default code has been loaded into the Editor.</p>
+
+                <form method="POST" action="/save_table/{{num}}">
+                    <div class="inputs"> <table>
+                        <tr>
+                            <th> <label> Name</label> </th>
+                            <th> <label> Warmups</label> </th>
+                            <th> <label> Unit</label> </th>
+                        </tr>
+                        {% for lifter in info %}
+                            <tr>
+                                <td> <input type="name" name="name_{{ lifter[0] }}" value="{{ lifter[0] }}" readonly /> </td>
+                                <td> <input type="warmup" name="warmup_{{ lifter[0] }}" value="{{ lifter[2] }}"  /> </td>
+                                <td> <select type="bool" name="unit_{{ lifter[0] }}">
+                                    <option value="0"> KG </option>
+                                    <option value="1"> LB </option>
+                                </select> </td>
+                                <td> <input type="rack_num" name="racknum_{{ lifter[0] }}" value="{{ num }}" readonly /> </td>
+                            </tr>
+                        {% endfor %}
+
+                        <tr>
+                            <div class="submit">
+                                <input type="submit" value="Save" />
+                            </div>
+                        </tr>
+                    </table> </div>
+                </form>
+
+    </body>
+</html>
