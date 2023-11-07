@@ -56,9 +56,13 @@ def clear_rack():
     pass
 
 
+@app.route("/display_example")
+def display_example():
+    return render_template("display_example.html")
+
+
 @app.route("/save_table/<num>", methods=['POST'])
 def set_rack(num):
-
     app_connection = get_db_conn('rack_info.db')
     app_cursor = app_connection.cursor()
     app_cursor.execute(f"SELECT * FROM lifters WHERE rack_id={num}")

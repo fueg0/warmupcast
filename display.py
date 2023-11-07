@@ -20,6 +20,11 @@ def get_db(index="*"):
         lifter_info["warmups"] = db.parse_numbers(lifter_info["warmups"])
         data.append(lifter_info)
 
+    # warmups["name"], warmups["load"], warmups["loading"]
     warmups = Lifter.organize_input(data)
 
 
+def update_display(flights):
+    # warmups["name"], warmups["load"], warmups["loading"]
+
+    pass
